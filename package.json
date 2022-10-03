@@ -1,0 +1,19 @@
+{
+  "name": "alkemy_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "author": "febles",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "method-override": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.23.2"
+  }
+}
