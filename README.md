@@ -2,6 +2,10 @@
 
 Aplicacion realizada para Challenge de Alkemy.<br>
 
+"Desarrollar una aplicación para administración de presupuesto personal. La misma debe
+permitir crear y editar ingresos y egresos de dinero, y mostrar un balance resultante de las
+operaciones registradas".<br>
+
 Se usaron las siguientes tecnologias y librerias:
 
 Node JS<br><br>
@@ -37,6 +41,6 @@ Start
 
 El servidor corre en:
 
-Open [http://localhost:3000](http://localhost:3000)
+[http://localhost:3000](http://localhost:3000)
 
 
