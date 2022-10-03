@@ -1,17 +1,10 @@
 // ************ Requires ************
 
-const fs = require("fs");
-const path = require("path");
-const { validationResult } = require("express-validator");
-const { stringify } = require("querystring");
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 //--- DB
 
 const db = require('../database/models/index.js');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const { log } = require("console");
-
 const Operacion = db.Operacion;
 
 
@@ -20,7 +13,29 @@ const Operacion = db.Operacion;
 const mainController = {
 
     home: function (req, res) {
-        res.render("index")
+
+        let total = 0
+        let array = []
+
+        fetch("http://localhost:3000/api/movimientos")
+            .then(response => response.json())
+            .then(result => {
+
+
+                for (let i = 0; i < result.count; i++) {     
+                    
+                    array.push(result.data[i])
+
+                    if (result.data[i].tipo == "ingreso"){
+                        total += result.data[i].monto
+                    } else total -= result.data[i].monto
+
+                }
+
+                res.render("index", { total, array})
+
+            })
+
     },
 
     operar: function (req, res) {

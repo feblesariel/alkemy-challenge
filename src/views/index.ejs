@@ -67,7 +67,9 @@
 
                             <div class="card text-white bg-dark w-75">
                                 <div class="card-body">
-                                    <h2 class="card-title text-center fs-1 m-0">$ 12187.12</h2>
+                                    <h2 class="card-title text-center fs-1 m-0">$
+                                        <%=Number.parseFloat(total).toFixed(2)%>
+                                    </h2>
                                 </div>
                             </div>
 
@@ -84,7 +86,7 @@
 
                         <div class="col-12 text-center">
 
-                            <h3 class="m-0">ULTIMOS MOVIMIENTOS</h3>
+                            <h3 class="m-0">ULTIMOS 10 MOVIMIENTOS</h3>
 
                         </div>
 
@@ -104,15 +106,35 @@
                                         <th scope="col">Tipo</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Kiosco</td>
-                                        <td>1581</td>
-                                        <td>2022-10-01 00:00:00</td>
-                                        <td>Ingreso</td>
-                                    </tr>
-                                </tbody>
+
+                                <% let i=1 %>
+
+                                    <% array.reverse().forEach((item)=> { %>
+
+                                        <% if (i <= 10) { %> 
+
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <%=i%>
+                                                </th>
+                                                <td>
+                                                    <%=item.concepto%>
+                                                </td>
+                                                <td>$<%=Number.parseFloat(item.monto).toFixed(2)%>
+                                                </td>
+                                                <td>
+                                                    <%=item.fecha%>
+                                                </td>
+                                                <td>
+                                                    <%=item.tipo%>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <% } %> 
+
+                                        <% i++; }) %>
                             </table>
 
                         </div>

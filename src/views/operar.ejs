@@ -140,7 +140,7 @@
                                                 <td>
                                                     <%=item.concepto%>
                                                 </td>
-                                                <td>$<%=item.monto%>
+                                                <td>$<%=Number.parseFloat(item.monto).toFixed(2)%>
                                                 </td>
                                                 <td>
                                                     <%=item.fecha%>
