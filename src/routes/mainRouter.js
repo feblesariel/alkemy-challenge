@@ -25,6 +25,10 @@ const mainController = require("../controllers/mainController");
 router.get("/", mainController.home);
 
 router.get("/operar", mainController.operar);
+router.post("/new", mainController.new);
+router.delete("/delete/:id", mainController.delete);
+router.get("/edit/:id", mainController.edit);
+router.put("/edit/:id", mainController.editProcces);
 
 
 
