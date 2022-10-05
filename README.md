@@ -25,7 +25,7 @@ sequelize<br>
 
 Install
 
-Ejecutar SCRIPT SQL alojado en la carpeta "DB_SCRIPT"
+Ejecutar SCRIPT SQL alojado en la carpeta "INFO"
 
 ```
   git clone https://github.com/feblesariel/alkemy-challenge.git
